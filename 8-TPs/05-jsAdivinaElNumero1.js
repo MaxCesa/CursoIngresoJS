@@ -12,15 +12,24 @@ var contadorIntentos;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
-		//alert(numeroSecreto );
+  contadorIntentos = 0;
+	numeroSecreto = Math.floor((Math.random() * 100) + 1);
 	
 
 }
 
 function verificar()
 {
-	
+  let numero = document.getElementById("txtIdNumero").value
+	contadorIntentos++;
+  if(numero == numeroSecreto){
+    alert("Usted es un ganador!!! y en solo " + contadorIntentos + " intentos");
+  }
+  else if(numero < numeroSecreto){
+    alert("falta...");
+  }
+  else{
+    alert("se pasó...");
+  }
 	
 }

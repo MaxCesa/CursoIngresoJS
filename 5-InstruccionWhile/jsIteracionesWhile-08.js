@@ -3,14 +3,21 @@ Al presionar el botón pedir  números  hasta que el usuario quiera,
 sumar los que son positivos y multiplicar los negativos.*/
 function mostrar()
 {
-	var contador;
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
-	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
-	respuesta='si';
+	respuesta=parseFloat(prompt("Ingrese valor (Ingrese 0 para parar)."));
+	while(respuesta	!= 0){
+		if(respuesta > 0){
+			sumaPositivos += respuesta;
+		}
+		else{
+			multiplicacionNegativos *= respuesta;
+		}
+		respuesta=parseFloat(prompt("Ingrese valor (Ingrese 0 para parar)."));
+	}
 
 
 	txtIdSuma.value=sumaPositivos;
